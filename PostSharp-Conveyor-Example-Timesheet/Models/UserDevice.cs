@@ -17,18 +17,19 @@ namespace PostSharp_Conveyor_Example_Timesheet.Models
 
         public UserDevice(string useragent)
         {
-            DetermineDeviceFormat(useragent);
+            Format = DetermineDeviceFormat(useragent);
         }
 
-        void DetermineDeviceFormat(string useragent)
+        DeviceFormat DetermineDeviceFormat(string useragent)
         {
             //This doesn't actually support iOS 13 which uses the same user agent as desktop.
             if(useragent.Contains("android") || useragent.Contains("iphone") || useragent.Contains("ipad"))
             {
-                Format = DeviceFormat.Mobile;
-            } else
+                return DeviceFormat.Mobile;
+            } 
+            else
             {
-                Format = DeviceFormat.Desktop;
+                return DeviceFormat.Desktop;
             }
         }
     }
