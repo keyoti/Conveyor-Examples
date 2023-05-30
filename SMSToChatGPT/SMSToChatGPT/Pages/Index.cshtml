@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+   
+    @using (Html.BeginForm(FormMethod.Post))
+    {
+
+        @Html.DisplayFor(model=>model.ConversationMessages)
+        @Html.EditorFor(model=>model.NewMessage)
+        <button type="submit" value="Send">Send</button>
+
+    }
+
+</div>

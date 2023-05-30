@@ -1,0 +1,9 @@
+﻿@model ConversationMessage
+
+@Html.HiddenFor(model => model.Sender)
+@Html.HiddenFor(model => model.Message)
+<div class="senderName">@Html.DisplayFor(model => model.Sender)</div>
+<div class="message">@Html.DisplayFor(model => model.Message)</div>
+
+<br />
+<br />
